@@ -1,7 +1,7 @@
 ## Description
 subscription system with user authentication and moyasar payment gateway
 ## Installation
-<p>Requirments:</p>
+requirements:
 ```
 PHP 8.1
 ```
