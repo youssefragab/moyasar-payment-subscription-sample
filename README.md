@@ -1,1 +1,7 @@
-<p>subscription system with user authentication with moyasar payment gateway</p>
+## Description
+<p>subscription system with user authentication and moyasar payment gateway</p>
+## Installation
+<p>Requirments:</p>
+```
+PHP 8.1
+```
