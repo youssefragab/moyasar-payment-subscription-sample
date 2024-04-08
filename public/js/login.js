@@ -16,12 +16,8 @@ $("#login-form").on("submit", function(e) {
         data: data,
         success: function(response) {
             if (response.success == "true") {
-                $(".error-group").hide();
-                $('#exampleModal').modal('toggle');
-                $(".user-auth span").html(response.user.name);
-                $(".user-auth").css('display','flex');
-                $(".user-guest").hide();
-                $("#is-auth").val("true");
+
+                window.location.href = window.location.href;
                 
             } else {
                 $(".error-group p").html(response.message)
