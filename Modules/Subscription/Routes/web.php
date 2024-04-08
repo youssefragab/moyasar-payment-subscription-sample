@@ -12,5 +12,8 @@
 */
 
 Route::prefix('subscription')->group(function() {
-    Route::get('/', 'SubscriptionController@index');
+    Route::group(['middleware' => 'auth'], function() {
+        Route::post('/payment', 'SubscriptionController@create');
+        Route::get('/payment', 'SubscriptionController@verify');
+    });
 });

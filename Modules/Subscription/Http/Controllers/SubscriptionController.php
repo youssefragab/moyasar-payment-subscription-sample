@@ -5,75 +5,41 @@ namespace Modules\Subscription\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Subscription\Services\SubscriptionService;
 
 class SubscriptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
-    public function index()
+
+    public function create(Request $request, SubscriptionService $subscriptionService)
     {
-        return view('subscription::index');
+        $user = auth()->user();
+
+        $createPayment = $subscriptionService->createPayment($user,[
+            'plan_id' => $request->plan_id,
+            'payment_id' => $request->payment_id,
+            'status' => 0
+        ]);
+
+        if(!$createPayment) {
+            return response()->json([
+                'success' => 'false',
+                'message' => 'Subscription not created'
+            ]);
+        }
+
+        return response()->json([
+            'success' => 'true',
+            'message' => 'Subscription created'
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('subscription::create');
-    }
+    public function verify(SubscriptionService $subscriptionService) {
+        $user = auth()->user();
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $verifyPayment = $subscriptionService->verifyPayment($user,[
+            'payment_id' => request()->id
+        ]);
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('subscription::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('subscription::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+        return view("subscription::verify", ['status' => $verifyPayment ? 'success' : 'failed']);
     }
 }

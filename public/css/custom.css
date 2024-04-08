@@ -30,3 +30,11 @@
     align-items: center;
     gap: 15px;
 }
+.verify {
+    padding: 75px 0px;
+}
+.subscribed  p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color:green
+}
