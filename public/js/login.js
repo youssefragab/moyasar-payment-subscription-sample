@@ -23,7 +23,7 @@ $("#login-form").on("submit", function(e) {
                 $(".error-group p").html(response.message)
                 $(".error-group").show();
                 form.find("button").html("Login");
-                form.find("button").css('opacity','1')
+                form.find("button").css('opacity','1') 
             }
         }
     });

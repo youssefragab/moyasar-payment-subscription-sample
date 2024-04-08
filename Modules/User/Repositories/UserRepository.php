@@ -28,7 +28,7 @@ class UserRepository
     }
 
     public function findByEmail(string $email)
-    {
+    { 
         return User::where([['email', $email],['status', StatusEnum::ACTIVE]])->first();
     }
 
