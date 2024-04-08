@@ -15,6 +15,7 @@ php artisan module:migrate Subscription
 php artisan module:seed User
 php artisan module:seed Plan
 php artisan module:seed Subscription
+php artisan key:generate
 ```
 ## Moyasar Payment Setup
 add the following lines to .env file and set them based on your moyasar account:
