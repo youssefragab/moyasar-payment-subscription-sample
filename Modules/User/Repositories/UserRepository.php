@@ -2,6 +2,7 @@
 namespace Modules\User\Repositories;
 
 use Modules\User\Models\User;
+use Modules\User\Enums\StatusEnum;
 
 class UserRepository
 {
@@ -28,7 +29,7 @@ class UserRepository
 
     public function findByEmail(string $email)
     {
-        return User::where('email', $email)->first();
+        return User::where([['email', $email],['status', StatusEnum::ACTIVE]])->first();
     }
 
     public function all()
