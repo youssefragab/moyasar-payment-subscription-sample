@@ -26,4 +26,4 @@ MOYASAR_SECRET_API_KEY=
 ## Demo User
 ```
 Email: john@gmail.com
-Password: 1234568
+Password: 12345678
