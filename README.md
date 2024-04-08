@@ -5,7 +5,8 @@ Requirements:
 ```
 PHP 8.1
 ```
-After downloading source code run the following:
+rename .env.example to .env and update database information
+run the following in your terminal:
 ```
 composer install
 php artisan module:migrate User
@@ -14,4 +15,10 @@ php artisan module:migrate Subscription
 php artisan module:seed User
 php artisan module:seed Plan
 php artisan module:seed Subscription
+```
+## Moyasar Payment Setup
+add the following lines to .env file and set them based on your moyasar account:
+```
+MOYASAR_PUBLISH_API_KEY=
+MOYASAR_SECRET_API_KEY=
 ```
