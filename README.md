@@ -22,3 +22,7 @@ add the following lines to .env file and set them based on your moyasar account:
 MOYASAR_PUBLISH_API_KEY=
 MOYASAR_SECRET_API_KEY=
 ```
+## Demo User
+```
+Email: john@gmail.com
+Password: 1234568
