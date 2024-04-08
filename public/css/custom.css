@@ -1,0 +1,32 @@
+.logo {
+    margin-right: 25px;
+}
+.text-secondary {
+    --bs-text-opacity: 1;
+    color:white !important;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    margin-bottom: 10px;
+}
+.modal-body {
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.error-group {
+    margin-bottom: 0px;
+    display: none;
+}
+.error-group p {
+    color:Red;
+    font-weight: bold;
+    margin: 0;
+}
+.user-auth {
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
