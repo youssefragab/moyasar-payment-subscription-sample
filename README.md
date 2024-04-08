@@ -6,7 +6,7 @@ Requirements:
 PHP 8.1
 ```
 rename .env.example to .env and update database information
-run the following in your terminal:
+then run the following in your terminal:
 ```
 composer install
 php artisan module:migrate User
