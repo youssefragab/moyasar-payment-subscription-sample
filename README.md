@@ -1,5 +1,5 @@
 ## Description
-<p>subscription system with user authentication and moyasar payment gateway</p>
+subscription system with user authentication and moyasar payment gateway
 ## Installation
 <p>Requirments:</p>
 ```
